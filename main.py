@@ -1,3 +1,5 @@
+
+
 def display():
     print(" MYSTERY GAME ".center(30, "="))
     instruction = """
