@@ -4,6 +4,7 @@ def display():
     print(" MYSTERY GAME ".center(30, "="))
     instruction = """
 1. Enter player's name.
+2. 
 """
     print(instruction)
     while True:

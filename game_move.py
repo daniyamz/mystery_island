@@ -1,6 +1,8 @@
 
 def movement():
     current_location = "beach"
+    
+    inventory = {"has_key": False, "rope": False}
     while True:
         # Beach movement
         if current_location == "beach":
@@ -31,5 +33,37 @@ def movement():
                 break
             else:
                 print("you can't that way.")
-
+        # Cave movement
+        elif current_location == "Cave":
+            print(f"Your current location is {current_location}")
+            print("It's dark, dump and echoes with dripping water")
+            choice = input("You can go 'Wast' to Jungle, 'North' to Old Bridg, what do you want to do? ").lower().strip()
+            if choice == "west":
+                current_location = "Jungle"
+            elif choice == "north":
+                current_location = "Old bridge"
+                if current_location == "Old bridge":
+                    while True:
+                        key = input("take key: ").lower().strip()
+                        if key == "take key":
+                            inventory["has_key"] = True
+                            print(inventory)
+                            break
+                        else:
+                            print("no key")
+            elif choice == "quit":
+                print("Quit")
+                break
+            else:
+                print("You can't go that way")
+        # Old Bridge
+        elif current_location == "Old bridge"
+        print(f"Your current location is {current_location}")
+        print("A wooden bridge sways over a deep canyon.")
+        choice = input("You can go east to 'Cave', 'south' to the Old bridge'. what do you want to do? ").lower().strip()
+        if choice == "east":
+            current_location = "Cave"
+        elif choice == "south":
+            current_location == "Old bridge"
+        
 movement()
