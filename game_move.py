@@ -45,6 +45,12 @@ def movement():
                 if current_location == "Old bridge":
                     while True:
                         key = input("take key: ").lower().strip()
+                        rope = input("take rope: ").lower().strip()
+                        if rope == "take rope":
+                            inventory["rope"] = True
+                            break
+                        else:
+                            print("no rope")
                         if key == "take key":
                             inventory["has_key"] = True
                             print(inventory)
@@ -57,13 +63,22 @@ def movement():
             else:
                 print("You can't go that way")
         # Old Bridge
-        elif current_location == "Old bridge"
-        print(f"Your current location is {current_location}")
-        print("A wooden bridge sways over a deep canyon.")
-        choice = input("You can go east to 'Cave', 'south' to the Old bridge'. what do you want to do? ").lower().strip()
-        if choice == "east":
-            current_location = "Cave"
-        elif choice == "south":
-            current_location == "Old bridge"
-        
+        elif current_location == "Old bridge":
+            print(f"Your current location is {current_location}")
+            print("A wooden bridge sways over a deep canyon.")
+            choice = input("You can go east to 'Cave', 'south' to the Old bridge'. what do you want to do? ").lower().strip()
+            if choice == "east":
+                current_location = "Cave"
+            elif choice == "south":
+                current_location == "Old bridge"
+                if inventory["rope"] == True:
+                    print("repair bridge")
+                else:
+                    print("rope can't be found")
+            elif choice == "quit":
+                print("Quit")
+                break
+            else:
+                print("You can't go that way")
+   
 movement()
