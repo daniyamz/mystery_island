@@ -1,4 +1,4 @@
-
+import game_move
 
 def display():
     print(" MYSTERY GAME ".center(30, "="))
@@ -15,4 +15,5 @@ def display():
         else:
             break
     print(f"\n{player_name}, Welcome to the Game.")
+    game_move.movement()
 display()

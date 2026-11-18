@@ -80,5 +80,4 @@ def movement():
                 break
             else:
                 print("You can't go that way")
-   
-movement()
+    return current_location
